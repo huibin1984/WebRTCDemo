@@ -1,37 +1,16 @@
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Realtime communication with WebRTC</title>
+  </head>
+  <body>
 
-<head>
-  <title>Get User Media</title>
-</head>
+    <h1>Realtime communication with WebRTC</h1>
 
-<body>
-  Video Demo:
-  <video autoplay></video>
+    <video autoplay playsinline></video>
 
-  <script>
-    var constraints = {
-      audio: true,
-      video: {
-        mandatory: {
-          width: { min: 320 },
-          height: { min: 180 }
-        },
-        optional: [
-          { width: { max: 1280 }},
-          { frameRate: 30 },
-          { facingMode: "user" }
-        ]
-      }
-    }
-
-    navigator.getUserMedia(constraints, gotStream, logError);
-
-    function gotStream(stream) {
-      var video = document.querySelector('video');
-      video.src = window.URL.createObjectURL(stream);
-    }
-
-    function logError(error) { console.log(error) }
-  </script>
-
-</body>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
